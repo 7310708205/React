@@ -1,93 +1,194 @@
-import React from 'react';
-//import ReactDOM from 'react-dom';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-//Props
-const Student=(props)=>{
+const LeftSide = () => {
   return (
     <>
-      <h1>Name: {props.name}</h1>
-      <h2>Course: {props.course}</h2>
-      <h3>Branch: {props.branch}</h3>
-    </> 
-  )
-}
-//------------------------------------------------------------------
-//Destructor
-// const Student = ({name, course, branch})=>{
-//   return(
-//   <h1>Name:{name}</h1>
-//   <h2>Course:{course}</h2>
-//   <h3>Branch:{branch}</h3>
-//   )
-// }
-function App() {
-  return(
-    <div className="App">
-      <Student name="Babita" course="B.Tech" branch="ECE"/>  
-      <Student name="Pooja" course="B.Tech" branch="CSE"/>  
-      <Student name="Anchal" course="B.Tech" branch="EEE"/>
-      <Student/>
- </div>
-  )
-}
+      <div class="leftSide">
+        <div class="profileText">
+          <div class="imgBx">
+            <img class="photo" src="./pic.jpg" alt="" />
+          </div>
+          <br />
+          <h2>
+            BABITA NEGI <br />
+            <span>Trainee Software Engineer</span>
+          </h2>
+        </div>
 
-//-----------------------------------------------------------
-//Classes
-class Student1 extends React.Component {
-  render() {
-    return (
-      <>
-      <h1>Name: Babita</h1>
-      <h2>Course: B.Tech</h2>
-      <h3>Branch: ECE</h3>
-      </>
-    )
-  }
-}
+        <div class="contactInfo">
+          <h3 class="title">Contact Info</h3>
+          <ul>
+            <li>
+              <span class="text">+91 7310708205</span>
+            </li>
+            <li>
+              <span class="text">babitan195@gmail.com</span>
+            </li>
+            <li>
+              <span class="text">www.linkedin/babita-negi</span>
+            </li>
+            <li>
+              <span class="text">Dehradun, India</span>
+            </li>
+          </ul>
+        </div>
+        <div class="contactInfo education">
+          <h3 class="title">Education</h3>
+          <ul>
+            <li>
+              <h5>2018 - 2022</h5>
+              <h4>B.Tech in ECE</h4>
+              <h4>NIT, Uttarakhand</h4>
+            </li>
+            <li>
+              <h5>2016 - 2017</h5>
+              <h4>Intermediate </h4>
+              <h4>S.G.R.R.Public School</h4>
+            </li>
+          </ul>
+        </div>
+        <div class="contactInfo language">
+          <h3 class="title">Languages</h3>
+          <ul>
+            <li>
+              <span class="text">English</span>
+              <span class="percent"></span>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <span class="text">Hindi</span>
+              <span class="percent"></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="rightSide">
+    <div class="about">
+      <h2 class="title2">Experience</h2>
+      <div class="box">
+        <div class="year_company">
+          <h5>2022 - Present</h5>
+          <h5>IVY Comptech</h5>
+        </div>
+        <div class="text">
+          <h4>Trainee Software Engineer</h4>
+          <p>
+            <ul>
+              <li>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </li>
+              <li>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua
+              </li>
+            </ul>
+          </p>
+        </div>
+      </div>
 
-function App() {
-  return(
-    <>
-    <div className="App">
-      <Student1 />
+      <div class="box">
+        <div class="year_company">
+          <h5>2021-2022</h5>
+          <h5>IVY Pvt Ltd</h5>
+        </div>
+        <div class="text">
+          <h4>SDE Intern</h4>
+          <p>
+            <ul>
+              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+            </ul>
+          </p>
+        </div>
+      </div>
     </div>
+    <div class="about skills">
+      <h2 class="title2">Technical Skills</h2>
+      <div class="box">
+        <h4>C++</h4>
+        <div class="percent"></div>
+      </div>
+      <div class="box">
+        <h4>Java</h4>
+        <div class="percent"></div>
+      </div>
+      <div class="box">
+        <h4>Data Structure</h4>
+        <div class="percent"></div>
+      </div>
+      <div class="box">
+        <h4>HTML</h4>
+        <div class="percent"></div>
+      </div>
+      <div class="box">
+        <h4>CSS</h4>
+        <div class="percent"></div>
+      </div>
+      <div class="box">
+        <h4>JavaScript</h4>
+        <div class="percent"></div>
+      </div>
+    </div>
+    <div class="about">
+      <h2 class="title2">Projects</h2>
+      <div class="box">
+        <div class="year_company">
+          <h5>Sep-Oct 2022</h5>
+        </div>
+        <div class="text">
+          <h4>Color Guessing Game</h4>
+          <p>
+            <ul>
+              <li>A Color Guessing Game using HTML, CSS and JavaScript.</li>
+              <li>
+                Player has three chances to play game and if he chose right
+                color then he will win otherwise lost.
+              </li>
+            </ul>
+          </p>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="year_company">
+          <h5>Sep-Oct 2022</h5>
+        </div>
+        <div class="text">
+          <h4>Library Management System</h4>
+          <p>
+            <ul>
+              <li>
+                A Java based application for library management using Java and
+                SQL.
+              </li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="about interest">
+      <h2 class="title2">Areas of Interests</h2>
+      <ul>
+        <li>Web Development</li>
+        <li>Machine Learning</li>
+        <li>Data Structure and Algorithm</li>
+      </ul>
+    </div>
+  </div>;
     </>
-  )
+  );
+};
+
+
+function App() {
+  return (
+      <div className="container">
+        <LeftSide />
+      </div>
+  );
 }
-
-//------------------------------------------------------------
-//Program to Check Palindrome Number
-
-// function isPalindrome() {
-
-//   let temp = 0, a, b, num;
-//   num = 1221;
-//   b = num;
-
-//   while (num > 0) {
-//     a = num % 10;
-//     num = parseInt(num / 10);
-//     temp = temp * 10 + a;
-//   }
-//   if (temp == b) {
-//     return "Number is palindrome";
-
-//   } else {
-//     return "Number is not palindrome";
-//   }
-
-// }
-// function App() {
-//   return (
-//     <>
-//       <h3>{isPalindrome()}</h3>
-//     </>
-//   );
-// }
-
-//------------------------------------------------------------
-
-
 
 export default App;
