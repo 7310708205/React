@@ -1,48 +1,23 @@
-import './App.css';
-import {useDispatch, useSelector} from 'react-redux';
+import "./App.css";
+import React, { Suspense, lazy } from "react";
 
-const Todos=()=>{
-  const todos=useSelector(state=>state.todos);
-  const handleClick= id =>dispatch({
-    type: 'DELETE_TODO',
-    payload: id,
-  })
-  if(!todos || !todos.length) {
-    return <p>No Todos</p>
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <h3>Lazy Loading</h3>
+        <Suspense fallback = {<div>Loading Home page...</div>} >
+          <Home />
+        </Suspense>
+        <Suspense fallback = {<div>Loading About page...</div>} >
+          <About />
+        </Suspense>
+      </div>
+    )
   }
-  return(
-    <ul>
-      {todos.map(todo=> <li onClick={handleClick}> {todo.label}</li>)}
-    </ul>
-  )
-}
-const TodoInput=()=>{
-  const dispatch=useDispatch();
-  const [newTodo, setNewTodo] = useState();
-  const handleChange = event => setNewTodo(event.target.value);
-  const handleClick=()=>dispatch({
-    type: 'ADD_TODO',
-    payload:{
-      label:newTodo,
-      id: Math.ceil(Math.random()*100),
-    }
-  })
-  return(
-    <>
-      <input value={newTodo} onChange={handleChange} type="text" />
-      <button onClick={handleClick}>Add Todo</button>
-    </>
-  )
-}
-
-function App() {
-  return (
-    <div className="App">
-      <h2>ToDo List</h2>
-      <Todos />
-      <TodoInput />
-    </div>
-  );
 }
 
 export default App;
